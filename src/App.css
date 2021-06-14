@@ -1,38 +1,154 @@
-.App {
-  text-align: center;
+:root {
+  --color: black;
+  --color-primary: #1d9e98;
+  --font: Montserrat;
+  --background-color: #f8fef1;
+}
+html {
+  font-size: 100%;
+  background-color: white;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.main {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  flex-flow: column;
+  /* background-color: beige; */
+  width: 60rem;
+  max-width: 60rem;
+  min-width: 60rem;
+  height: 40rem;
+  border-radius: 3px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.body {
+  display: flex;
+  flex-flow: row;
+  height: 30rem;
+  box-sizing: border-box;
+}
+.messages {
+  background-color: var(--background-color);
+  width: 80%;
+  height: 100%;
+  padding: 1rem 1rem 0 1rem;
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  margin-top: 0;
+  transition: all .4s ease-in-out;
+  overflow-y: scroll;
+
+}
+.panel {
+  background-color: #8cb8e357;
+  position: relative;
+  display: inline-block;
+  height: 100%;
+  width: 15rem;
+  padding:2rem 0 0  1rem;
+  margin : 0rem 0 0 1rem;
+  transition: all .3s ease-in-out;
+  text-align: left;
+}
+
+.input {
+  height: 3rem;
+  width: 100%;
+  outline: none;
+  border: none;
+  padding-left: 1rem;
+}
+.message {
+  background-color: #e5e5dc;
+  line-height: 1.5rem;
+  font-family: var(--font);
+  width: 15.5rem;
+  height: auto;
+  border-radius: 5px;
+
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+.message-agent {
+  right: 1rem;
+  /* position: absolute; */
+  margin-left: 22rem;
+}
+.message-user {
+  background-color: white;
+  left: 0;
+}
+
+.header {
+  background-color: var(--color-primary);
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  padding: 1rem;
+  z-index: 100;
+  box-shadow: 0 0 1rem 0 rgb(0, 0, 0, 0.5);
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+.agent-name {
   color: white;
+  font-family: var(--font);
+  font-weight: 400;
+  margin-top: 1rem;
 }
-
-.App-link {
-  color: #61dafb;
+.img {
+  border-radius: 50%;
+  top: 33%;
 }
+.toggle {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding: 1rem 0 1rem 0;
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+  
+}
+.toggle:hover{
+  transform: scale(1.01rem);
+  /* border: 1px solid blue; */
+  font-weight: bold;
+}
+.hide-panel {
+  visibility: hidden; 
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+}
+.max-width{
+  width: 96%;
+}
+.min-width{
+  width: 71.7%;
+}
+.show-panel {
+  /* transform: scale(0, 1); */
+  /* visibility: visible; */
+
+}
+.btn-cont{
+   
+  width: 3%;
+  text-align: center;
 }
